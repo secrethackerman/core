@@ -23,7 +23,7 @@ Built with [@omss/framework](https://www.npmjs.com/package/@omss/framework) for 
 
 ---
 
-CinePro Core is the central scraping and streaming engine of the CinePro ecosystem. It exposes an [OMSS-compliant](https://github.com/omss-spec/omss-spec) HTTP API for resolving movie and TV show stream sources from multiple providers, with optional Redis caching and full Docker support.
+CinePro Core is the central scraping and streaming engine of the CinePro ecosystem. It exposes an [OMSS-compliant](https://github.com/omss-spec/omss-spec) HTTP API for resolving movie and TV show stream sources from multiple providers, with memory caching and full Docker support.
 
 It now also includes MCP support for AI agents — making it the first streaming server worldwide to offer this feature.
 
@@ -65,7 +65,7 @@ For Docker, production deployment, and advanced configuration options → **[Qui
 * 🎯 **OMSS-Compliant** – follows the Open Media Streaming Standard
 * 🔌 **Modular Providers** – drop-in provider system with auto-discovery
 * 🛡️ **Type-Safe** – built with strict TypeScript
-* ⚡ **Production-Ready** – memory-first cache, optional Redis, Docker support, and robust error handling
+* ⚡ **Production-Ready** – memory cache, Docker support, and robust error handling
 * 🎬 **Multi-Source Streaming** – resolves movies and TV shows from multiple providers
 * 📺 **Stremio Compatibility** – enable a Stremio addon using the `STREMIO_ADDON` environment variable at `/stremio/manifest.json`
 * 📦 **CineHome Integration** *(planned for late 2026)* – compatible with CineHome download automation

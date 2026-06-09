@@ -29,7 +29,7 @@ If the vulnerability is related to:
 - Core routing or API endpoints
 - Proxy system implementation
 - TMDB integration
-- Cache system (Redis/Memory)
+- Cache system (Memory)
 - Request/response handling
 - OMSS specification compliance
 
@@ -101,7 +101,6 @@ npm audit fix
 - **Never commit `.env` files** to version control
 - Use strong, unique values for sensitive configuration
 - Keep `TMDB_API_KEY` secure and don't share it publicly
-- If using Redis, use authentication (`REDIS_PASSWORD`)
 
 ### 3. Network Security
 
@@ -123,7 +122,7 @@ When developing providers:
 ### 5. Production Deployment
 
 - Set `NODE_ENV=production` in production
-- Use Redis for caching (not memory cache)
+- Use memory cache
 - Monitor logs for suspicious activity
 - Implement access controls if exposing publicly
 - Keep Node.js and system packages updated
@@ -165,7 +164,6 @@ More dependencies could be added to cinepro-core. Please refer to `package.json`
 Underlying framework dependencies (managed by @omss/framework):
 
 - **Fastify**: Web framework with security features
-- **Redis** (optional): Cache backend
 - Additional utilities
 
 Monitor security advisories for these dependencies.

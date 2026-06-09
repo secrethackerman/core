@@ -44,7 +44,7 @@ body:
               - Node.js version: (run `node --version`)
               - CinePro Core version: (from package.json)
               - @omss/framework version: (from package.json)
-              - Cache Type: (memory/redis)
+              - Cache Type: memory
               - Using Proxy/VPN: (yes/no)
           render: yaml
       validations:

@@ -123,7 +123,7 @@ Paste relevant API response or logs here
 
 - Node.js version:
 - Operating System:
-- Cache type used: (memory/redis)
+- Cache type used: memory
 
 **Testing Steps:**
 
