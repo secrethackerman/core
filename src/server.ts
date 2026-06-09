@@ -9,6 +9,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 async function main() {
+    const cacheType = (process.env.CACHE_TYPE as 'memory' | 'redis') ?? 'memory';
+
     const server = new OMSSServer({
         name: 'CinePro',
         version: '1.0.0',
@@ -18,18 +20,22 @@ async function main() {
         port: Number(process.env.PORT ?? 3000),
         publicUrl: process.env.PUBLIC_URL,
 
-        // Cache (memory for dev, Redis for prod)
+        // Cache (memory by default, optional Redis)
         cache: {
-            type: (process.env.CACHE_TYPE as 'memory' | 'redis') ?? 'memory',
+            type: cacheType,
             ttl: {
                 sources: 60 * 60,
                 subtitles: 60 * 60 * 24
             },
-            redis: {
-                host: process.env.REDIS_HOST ?? 'localhost',
-                port: Number(process.env.REDIS_PORT ?? 6379),
-                password: process.env.REDIS_PASSWORD
-            }
+            ...(cacheType === 'redis'
+                ? {
+                      redis: {
+                          host: process.env.REDIS_HOST ?? 'localhost',
+                          port: Number(process.env.REDIS_PORT ?? 6379),
+                          password: process.env.REDIS_PASSWORD
+                      }
+                  }
+                : {})
         },
 
         // TMDB
